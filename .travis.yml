@@ -60,7 +60,7 @@ before_script:
 script:
   - cd "$TRAVIS_BUILD_DIR" && touch .ignore_changes
   - |
-    ./compile.sh BOARD=aml-g12 BRANCH=default RELEASE=$RELEASE BUILD_MINIMAL=$BUILD_MINIMAL BUILD_DESKTOP=$BUILD_DESKTOP \
+    travis_wait 30 ./compile.sh BOARD=aml-g12 BRANCH=default RELEASE=$RELEASE BUILD_MINIMAL=$BUILD_MINIMAL BUILD_DESKTOP=$BUILD_DESKTOP \
       KERNEL_ONLY=$KERNEL_ONLY KERNEL_CONFIGURE=no PROGRESS_DISPLAY=$PROGRESS_DISPLAY
 after_success:
   - df -h
