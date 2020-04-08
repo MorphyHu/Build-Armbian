@@ -53,9 +53,9 @@ before_script:
   - sudo ccache -M 5.0G
   - |
     if [ -z "$TRAVIS_TAG" ] ; then
-      export KERNEL_ONLY="yes" PROGRESS_DISPLAY="none"
+      export KERNEL_ONLY="yes"
     else
-      export KERNEL_ONLY="no"
+      export KERNEL_ONLY="no" PROGRESS_DISPLAY="none"
     fi
 script:
   - cd "$TRAVIS_BUILD_DIR" && touch .ignore_changes
